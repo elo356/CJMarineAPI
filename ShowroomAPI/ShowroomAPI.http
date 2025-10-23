@@ -1,0 +1,6 @@
+@ShowroomAPI_HostAddress = http://localhost:5258
+
+GET {{ShowroomAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
