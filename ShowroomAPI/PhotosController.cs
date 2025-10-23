@@ -11,11 +11,12 @@ public class PhotosController : ControllerBase
 
     public PhotosController(IConfiguration config)
     {
-        var acc = new Account(
-            config["Cloudinary:CloudName"],
-            config["Cloudinary:ApiKey"],
-            config["Cloudinary:ApiSecret"]
-        );
+                var acc = new Account(
+    Environment.GetEnvironmentVariable("CLOUDINARY_CLOUDNAME"),
+    Environment.GetEnvironmentVariable("CLOUDINARY_APIKEY"),
+    Environment.GetEnvironmentVariable("CLOUDINARY_APISECRET")
+);
+
         _cloudinary = new Cloudinary(acc);
     }
 
